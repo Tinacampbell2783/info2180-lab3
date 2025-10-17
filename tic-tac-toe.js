@@ -10,4 +10,21 @@ window.addEventListener('DOMContentLoaded', () => {
   squares.forEach(square => {
     square.classList.add('square');
   });
+// Track current player
+  let currentPlayer = 'X';
+
+squares.forEach(square => {
+    square.addEventListener('click', () => {
+      // Prevent overwriting an already played square
+      if (square.textContent !== '') return;
+
+      // Place X or O
+      square.textContent = currentPlayer;
+
+      square.classList.add(currentPlayer);
+
+      // Switch player
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    });
+  });
 });
