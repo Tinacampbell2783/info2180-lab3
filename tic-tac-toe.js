@@ -27,4 +27,15 @@ squares.forEach(square => {
       currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     });
   });
+// Add hover effect 
+  squares.forEach(square => {
+    square.addEventListener('mouseenter', () => {
+      square.classList.add('hover');
+    });
+
+    square.addEventListener('mouseleave', () => {
+      square.classList.remove('hover');
+    });
+  });
+
 });
